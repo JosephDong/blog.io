@@ -1,5 +1,5 @@
 ---
-layout: get
+layout: post
 title: HDFS FileSystem 源码分析
 date: 2018-01-25
 categories: Hadoop
