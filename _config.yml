@@ -27,7 +27,7 @@ zhihu_username:
 # use Github Flavored Markdown !important  
 # document: http://jekyllrb.com/docs/configuration/#kramdown  
 markdown: kramdown
-highlighter: rouge
+highlighter: true
 permalink: pretty
 
 kramdown:
