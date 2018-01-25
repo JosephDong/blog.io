@@ -6,13 +6,12 @@ categories: Hadoop
 tags: [大数据,Hadoop,HDFS]
 description: 理解FileSystem初始化过程。
 ---
-
-###简介
+### 简介
 FileSystem 是一个相当通用的文件系统的抽象类，负责文件系统相关操作，如：创建目录、创建文件、删除目录或文件、读取文件内容等。既然是抽象类，肯定有具体的实现，如下图：
 ![](index_files/2df98983-d741-4ff2-9c25-859633ecc19a.png)
 本文主要讲解 HDFS 分布式文件系统，具体实现类为`DistributedFileSystem`。
  
-###创建 FileSystem 实例源码分析
+### 创建 FileSystem 实例源码分析
 下面以`FileSystem fs = FileSystem.get(new Configuration());`为例进行源码剖析。
 *进入`get`方法，源码如下：*
 ```java
