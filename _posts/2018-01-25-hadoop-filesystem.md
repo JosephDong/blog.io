@@ -164,4 +164,4 @@ public void initialize(URI uri, Configuration conf) throws IOException {
   this.workingDir = getHomeDirectory();
 }
 ```
-此方法最核心的代码是第`14`行初始化`DFSClient`类，所有文件系统相关操作全部在此类中实现，下篇文章再分享里面的实现细节。紧接着返回`fs`实例，到此整个FileSystem实例初始化完成。
+此方法最核心的代码是第`14`行初始化`DFSClient`类，所有文件系统相关操作全部在此类中实现，到此整个FileSystem实例初始化完成。
