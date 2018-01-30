@@ -13,6 +13,7 @@ description: 批量实现tag删除。
 git分本地和远程两个环境，两个环境查看tag命令有所不一样。
 
 ***本地：***
+
 使用`git tag`命令，输出如下：
 ```
 qa_v3.0_20180117_01
@@ -20,6 +21,7 @@ qa_v3.0_20180117_02
 qa_v3.0_20180117_03
 ```
 ***远程：***
+
 使用`git show-ref`或`git show-ref --tag`命令，输出如下：
 ```
 c8a47084b280ecb1a408abfaa80ad58772efd596 refs/tags/qa_v3.0_20180117_01
@@ -31,6 +33,7 @@ b6fc0b51ecbc250496920f70644ca8e41287104e refs/tags/qa_v3.0_20180117_03
 本地和远程删除命令也有所区别。
 
 ***本地：***
+
 使用`git tag -d <tag>`命令，示例：`git tag -d qa_v3.0_20180117_03`
 
 ***远程：***
@@ -41,13 +44,14 @@ b6fc0b51ecbc250496920f70644ca8e41287104e refs/tags/qa_v3.0_20180117_03
 由于我们项目规范中明确tag名称中加上环境区分，因此所有qa环境的tag必须是`qa_`开头，下面以此为例来讲解如何批量删除`qa`环境所有tag。
 
 ***本地：***
+
 使用`git tag | grep 'qa_' | xargs git tag -d`命令，先使用`grep`命令找出包含`qa_`的tag，再使用`xargs`命令传递参数给后面的`git tag -d`命令进行删除，`xargs`命令解释参考：<http://man.linuxde.net/xargs>
 
 ***远程：***
+
 使用`git show-ref --tag | grep 'qa_' | awk '/(.*)(\s+)(.*)$/ {print ":" $2}' | xargs git push origin`命令
 
 ### 0x5 参考资料
-<https://yq.aliyun.com/ziliao/60577>
-
+<https://yq.aliyun.com/ziliao/60577><br>
 <http://man.linuxde.net/xargs>
 
