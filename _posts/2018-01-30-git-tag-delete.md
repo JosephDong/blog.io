@@ -37,6 +37,7 @@ b6fc0b51ecbc250496920f70644ca8e41287104e refs/tags/qa_v3.0_20180117_03
 使用`git tag -d <tag>`命令，示例：`git tag -d qa_v3.0_20180117_03`
 
 ***远程：***
+
 使用`git push origin :<tag>`命令，示例：`git push origin :refs/tags/qa_v3.0_20180117_03`
 
 ### 0x4 批量删除tag
