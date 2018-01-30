@@ -11,6 +11,7 @@ description: 批量实现tag删除。
 
 ### 0x2 查看tag
 git分本地和远程两个环境，两个环境查看tag命令有所不一样。
+
 ***本地：***
 使用`git tag`命令，输出如下：
 ```
@@ -28,6 +29,7 @@ b6fc0b51ecbc250496920f70644ca8e41287104e refs/tags/qa_v3.0_20180117_03
 
 ### 0x3 删除单个tag
 本地和远程删除命令也有所区别。
+
 ***本地：***
 使用`git tag -d <tag>`命令，示例：`git tag -d qa_v3.0_20180117_03`
 
@@ -37,6 +39,7 @@ b6fc0b51ecbc250496920f70644ca8e41287104e refs/tags/qa_v3.0_20180117_03
 ### 0x4 批量删除tag
 正如文章开头所说，实际项目中会出现很多的tag，而git原生提供的删除命令只支持单个tag删除功能，为什么没有批量删除命令？可能出于安全考虑吧。但我们每个项目都有上百个tag，不可能一个个去删除，下面介绍通过Linux命令来实现批量删除功能。**注意：此功能慎用，切记确定清楚哪些tag是需要删除的，建议找一个测试项目先实践。**
 由于我们项目规范中明确tag名称中加上环境区分，因此所有qa环境的tag必须是`qa_`开头，下面以此为例来讲解如何批量删除`qa`环境所有tag。
+
 ***本地：***
 使用`git tag | grep 'qa_' | xargs git tag -d`命令，先使用`grep`命令找出包含`qa_`的tag，再使用`xargs`命令传递参数给后面的`git tag -d`命令进行删除，`xargs`命令解释参考：<http://man.linuxde.net/xargs>
 
@@ -45,5 +48,6 @@ b6fc0b51ecbc250496920f70644ca8e41287104e refs/tags/qa_v3.0_20180117_03
 
 ### 0x5 参考资料
 <https://yq.aliyun.com/ziliao/60577>
+
 <http://man.linuxde.net/xargs>
 
