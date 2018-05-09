@@ -11,7 +11,7 @@ description: ArrayList序列化、反序列化原理解析。
 相信ArrayList是Java开发过程中最常用的集合类之一，底层存储结构是数组，这篇文章不讲解底层数据结构的实现，主要讲解它的序列化机制，大家都知道ArrayList是可以序列化的，但也有一些人不知道具体是怎么序列化的，希望这篇章可以帮到大家。
 
 ### 0x2 ArrayList 类结构图
-
+![ArrayList UML图](https://github.com/yuesefu/yuesefu.github.io/blob/master/img/custorm/ArrayList_UML.png)
 从类结构图可以看出实现了Serializable接口，说明是可以被序列化的。
 
 ### 0x3 序列化过程详解
