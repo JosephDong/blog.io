@@ -74,18 +74,20 @@ public class User implements Serializable{
 
 ### 0x5 测试结果
 **Encode：**
-Benchmark                                               Mode  Cnt      Score     Error   Units
-SerializableEncodeTest.testAvroSerializableEncode      thrpt   20   2881.398 ±  27.619  ops/ms
-SerializableEncodeTest.testJavaSerializableEncode      thrpt   20   1708.157 ± 122.516  ops/ms
-SerializableEncodeTest.testProtobufSerializableEncode  thrpt   20  10349.962 ± 215.994  ops/ms
-SerializableEncodeTest.testThriftSerializableEncode    thrpt   20   5292.191 ±  49.890  ops/ms
+
+> Benchmark                                               Mode  Cnt      Score     Error   Units
+> SerializableEncodeTest.testAvroSerializableEncode      thrpt   20   2881.398 ±  27.619  ops/ms
+> SerializableEncodeTest.testJavaSerializableEncode      thrpt   20   1708.157 ± 122.516  ops/ms
+> SerializableEncodeTest.testProtobufSerializableEncode  thrpt   20  10349.962 ± 215.994  ops/ms
+> SerializableEncodeTest.testThriftSerializableEncode    thrpt   20   5292.191 ±  49.890  ops/ms
 
 **Decode：**
-Benchmark                                               Mode  Cnt      Score     Error   Units
-SerializableDecodeTest.testAvroSerializableDecode      thrpt   20    931.167 ±  13.185  ops/ms
-SerializableDecodeTest.testJavaSerializableDecode      thrpt   20    521.145 ±   6.993  ops/ms
-SerializableDecodeTest.testProtobufSerializableDecode  thrpt   20  25335.295 ± 564.496  ops/ms
-SerializableDecodeTest.testThriftSerializableDecode    thrpt   20   5239.726 ±  75.048  ops/ms
+
+> Benchmark                                               Mode  Cnt      Score     Error   Units
+> SerializableDecodeTest.testAvroSerializableDecode      thrpt   20    931.167 ±  13.185  ops/ms
+> SerializableDecodeTest.testJavaSerializableDecode      thrpt   20    521.145 ±   6.993  ops/ms
+> SerializableDecodeTest.testProtobufSerializableDecode  thrpt   20  25335.295 ± 564.496  ops/ms
+> SerializableDecodeTest.testThriftSerializableDecode    thrpt   20   5239.726 ±  75.048  ops/ms
 
 ### 0x6 结论
 从结果中不难看出，`Protobuf`不管是序列化还是反序列化都有绝对优势，`Java原生`都是最弱的。
