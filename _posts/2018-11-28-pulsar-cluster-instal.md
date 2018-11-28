@@ -96,6 +96,7 @@ Exception in thread "main" org.apache.bookkeeper.client.BKException$ZKException:
  at org.apache.pulsar.broker.zookeeper.aspectj.ClientCnxnAspect.timedProcessEvent(ClientCnxnAspect.java:72)
  at org.apache.zookeeper.ClientCnxn$EventThread.processEvent(ClientCnxn.java:528)
  at org.apache.zookeeper.ClientCnxn$EventThread.run(ClientCnxn.java:508)
+ 
 ```
 
 ### 0x6 安装BookKeeper集群
